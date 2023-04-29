@@ -305,3 +305,55 @@ Rule PlayerHealOtherC1Mechanic
 	Response PlayerHealOtherC1Mechanic
 }
 
+//--------------------------------------------------------------------------------------------------------------
+// AutoConvo
+//--------------------------------------------------------------------------------------------------------------
+Response _C1M1_ElevatorHello01Mechanic
+{
+	scene "scenes/Mechanic/WorldC1M1B92.vcd"  then coach _C1M1_ElevatorHello01c foo:0 -8.677 //Holy shit! This is some kind of nightmare. Goddamn Zombie Apocalypse and shit. Shit, shit, shit. What in the hell are we going to do?
+}
+Rule _C1M1_ElevatorHello01Mechanic
+{
+	criteria Concept_C1M1_ElevatorHello01 IsMechanic AutoIsNotScavenge AutoIsNotSurvival  IsEveryoneAlive
+	ApplyContext "Talk:1:8.777"
+	applycontexttoworld
+	Response _C1M1_ElevatorHello01Mechanic
+}
+
+Response C1M1_ElevatorHello01_02CMechanic
+{
+	scene "scenes/Mechanic/WorldC1M1B100.vcd"  then gambler C1M1_ElevatorHello01_02C1 foo:0 -3.112 //Oh shit man, I ain't ever seen anyone die before.
+}
+Rule C1M1_ElevatorHello01_02CMechanic
+{
+	criteria Concept_C1M1_ElevatorHello01 IsMechanic AutoIsNotScavenge AutoIsNotSurvival  IsWithOnlyThree IsCoachNotAlive
+	ApplyContext "Talk:1:3.212"
+	applycontexttoworld
+	Response C1M1_ElevatorHello01_02CMechanic
+}
+
+Response C1M1_ElevatorHello01_02PCMechanic
+{
+	scene "scenes/Mechanic/WorldC1M1B101.vcd"  then gambler C1M1_ElevatorHello01_02PC1 foo:0 -2.926 //We gotta watch each other's backs. My name's Ellis, you?
+}
+Rule C1M1_ElevatorHello01_02PCMechanic
+{
+	criteria Concept_C1M1_ElevatorHello01 IsMechanic AutoIsNotScavenge AutoIsNotSurvival  IsWithTwo IsCoachNotAlive IsProducerNotAlive
+	ApplyContext "Talk:1:3.026"
+	applycontexttoworld
+	Response C1M1_ElevatorHello01_02PCMechanic
+}
+
+Response Playerc1m1_enter_elevatorMechanic
+{
+	scene "scenes/Mechanic/WorldC1M1B120.vcd"  //This elevator's still workin!
+	scene "scenes/Mechanic/WorldC1M1B121.vcd"  //Thank the lord, this one's still workin.
+	scene "scenes/Mechanic/WorldC1M1B122.vcd"  //Hey, everybody, in the elevator!
+}
+Rule Playerc1m1_enter_elevatorMechanic
+{
+	criteria Conceptc1m1_enter_elevator IsMechanic IsTalk IsTalkMechanic IsNotSaidc1m1_enter_elevator AutoIsNotScavenge AutoIsNotSurvival IsWorldTalkMechanic
+	ApplyContext "Saidc1m1_enter_elevator:1:0"
+	applycontexttoworld
+	Response Playerc1m1_enter_elevatorMechanic
+}
