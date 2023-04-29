@@ -217,5 +217,29 @@ Rule PlayerAlertGiveItemStopC1Producer
 	Response PlayerAlertGiveItemStopC1Producer
 }
 
+//--------------------------------------------------------------------------------------------------------------
+// AutoConvo
+//--------------------------------------------------------------------------------------------------------------
+Response C1M1_ElevatorHello01_02GProducer
+{
+	scene "scenes/Producer/WorldGenericProducer50.vcd"  then coach C1M1_ElevatorHello01_02G1 foo:0 -1.932 //Hey. Name's Rochelle, you?
+}
+Rule C1M1_ElevatorHello01_02GProducer
+{
+	criteria Concept_C1M1_ElevatorHello01 IsProducer AutoIsNotScavenge AutoIsNotSurvival  IsWithOnlyThree IsGamblerNotAlive
+	ApplyContext "Talk:1:2.032"
+	applycontexttoworld
+	Response C1M1_ElevatorHello01_02GProducer
+}
 
-
+Response Playerc1m1_enter_elevatorProducer
+{
+	scene "scenes/Producer/WorldGenericProducer42.vcd"  //This elevator works!
+}
+Rule Playerc1m1_enter_elevatorProducer
+{
+	criteria Conceptc1m1_enter_elevator IsProducer IsTalk IsTalkProducer IsNotSaidc1m1_enter_elevator AutoIsNotScavenge AutoIsNotSurvival IsWorldTalkProducer
+	ApplyContext "Saidc1m1_enter_elevator:1:0"
+	applycontexttoworld
+	Response Playerc1m1_enter_elevatorProducer
+}
