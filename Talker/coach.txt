@@ -323,3 +323,34 @@ Rule PlayerHealOtherC1Coach
 	criteria ConceptPlayerHealingOther IsNotCoughing  IsCoach IsTalk IsTalkCoach  IsWorldTalkCoach  NoKnowNames
 	Response PlayerHealOtherC1Coach
 }
+
+//--------------------------------------------------------------------------------------------------------------
+// AutoConvo
+//--------------------------------------------------------------------------------------------------------------
+Response C1M1_ElevatorHello01_02MCoach
+{
+	scene "scenes/Coach/WorldC1M1B110.vcd"  then gambler C1M1_ElevatorHello01_02M1 foo:0 -2.294 //People call me Coach, what's your name?
+}
+Rule C1M1_ElevatorHello01_02MCoach
+{
+	criteria Concept_C1M1_ElevatorHello01 IsCoach AutoIsNotScavenge AutoIsNotSurvival  IsWithOnlyThree IsMechanicNotAlive
+	ApplyContext "Talk:1:2.394"
+	applycontexttoworld
+	Response C1M1_ElevatorHello01_02MCoach
+}
+
+Response Playerc1m1_enter_elevatorCoach
+{
+	scene "scenes/Coach/WorldC1M1B85.vcd"  //This elevator's still on!
+	scene "scenes/Coach/WorldC1M1B87.vcd"  //Thank Jesus, this one's still on. I ain't walkin' down thirty flights of stairs.
+	scene "scenes/Coach/WorldC1M1B88.vcd"  //I don't think you're supposed to use an elevator when the buildin's on fire.
+	scene "scenes/Coach/WorldC1M1B91.vcd"  //Everybody into the elevator!
+	scene "scenes/Coach/WorldC1M1B92.vcd"  //Get in the elevator!
+}
+Rule Playerc1m1_enter_elevatorCoach
+{
+	criteria Conceptc1m1_enter_elevator IsCoach IsTalk IsTalkCoach IsNotSaidc1m1_enter_elevator AutoIsNotScavenge AutoIsNotSurvival IsWorldTalkCoach
+	ApplyContext "Saidc1m1_enter_elevator:1:0"
+	applycontexttoworld
+	Response Playerc1m1_enter_elevatorCoach
+}
