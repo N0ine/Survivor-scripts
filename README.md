@@ -5,14 +5,16 @@ I copied every line that i could find with only NoKnowNames criterion.
 
 ## What does have in the scripts:
 
--Survivor not knowing other players
++ Survivor not knowing other players
 
--Dont know how to heal others
++ Dont know how to heal others
 
--survivors mourning other survivor(s) that havend made it alive
++ survivors mourning other survivor(s) that havend made it alive
+
++ added elevator responses //AutoConvo
 
 ## What doesn't have in the scripts:
 
--survivors dont know infected names
++ survivors dont know infected names
 
--doesn't have ISMAP criterion
++ doesn't have ISMAP criterion
