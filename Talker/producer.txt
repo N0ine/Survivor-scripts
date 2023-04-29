@@ -1,0 +1,221 @@
+//--------------------------------------------------------------------------------------------------------------
+// Producer Response Rule File
+//--------------------------------------------------------------------------------------------------------------
+
+Criterion "ProducerNotPickedUpItem" "ProducerPickedUpItem" "!=1" "required" weight 0
+Criterion "ProducerNotSaidGrabbingCan" "SaidGrabbingCan" "!=1" "required" weight 0
+Criterion "IsProducerFriendlyFire" "worldProducerFriendlyFire" "1" "required" weight 0
+Criterion "IsNotProducerFriendlyFire" "worldProducerFriendlyFire" "!=1" "required" weight 0
+Criterion "IsNotAskedForCoverProducer" "ProducerAskForCover" "!=1" "required" weight 0
+Criterion "IsNotSaidProducerWitchChasing" "SaidProducerWitchChasing" "!=1" "required" weight 0
+Criterion "IsNotSaidAlertGiveItemStopProducer" "SaidAlertGiveItemStopProducer" "!=1" "required" weight 0
+Criterion "IsNotSaidAlertGiveItemStopFirstAidProducer" "SaidAlertGiveItemStopFirstAidProducer" "!=1" "required" weight 0
+Criterion "IsNotSaidBeenJockeyedProducer" "SaidBeenJockeyedProducer" "!=1" "required" weight 0
+Criterion "IsSaidProducerWitchAttacking" "SaidProducerWitchAttacking" "1" "required" weight 0
+
+Response SurvivorMournGamblerC1Producer
+{
+	scene "scenes/Producer/SurvivorMournGamblerC101.vcd"  //Not much to say my friend, goodbye.
+}
+Rule SurvivorMournGamblerC1Producer
+{
+	criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsProducer IsDeadGambler IsNotSaidSomeoneDied IsTalk IsTalkProducer IsNotIncapacitated  HasNotDefibrillator IsWorldTalkProducer  NoKnowNames 
+	Response SurvivorMournGamblerC1Producer
+}
+
+Response SurvivorMournMechanicC1Producer
+{
+	scene "scenes/Producer/SurvivorMournMechanicC101.vcd"  //Gonna miss our little mechanic.
+}
+Rule SurvivorMournMechanicC1Producer
+{
+	criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsProducer IsDeadMechanic IsNotSaidSomeoneDied IsTalk IsTalkProducer IsNotIncapacitated  HasNotDefibrillator IsWorldTalkProducer  NoKnowNames 
+	Response SurvivorMournMechanicC1Producer
+}
+
+Response SurvivorSpottedCoachClose2C1Producer
+{
+	scene "scenes/Producer/NameCoach06.vcd"  //Coach!
+	scene "scenes/Producer/NameCoach18.vcd"  //Big Guy!
+	scene "scenes/Producer/NameCoach19.vcd"  //Big Guy!
+}
+Rule SurvivorSpottedCoachClose2C1Producer
+{
+	criteria ConceptPlayerLook IsNotCoughing IsProducer IsTalk IsTalkProducer IsNotSmartLookAuto  SubjectIsCoach IsCoachNear400 IsWorldTalkProducer  NoKnowNames
+	Response SurvivorSpottedCoachClose2C1Producer
+}
+
+Response SurvivorSpottedCoachCloseC1Producer
+{
+	scene "scenes/Producer/NameCoach06.vcd"  //Coach!
+	scene "scenes/Producer/NameCoach18.vcd"  //Big Guy!
+	scene "scenes/Producer/NameCoach19.vcd"  //Big Guy!
+}
+Rule SurvivorSpottedCoachCloseC1Producer
+{
+	criteria ConceptPlayerLookHere IsNotCoughing IsProducer IsTalk IsTalkProducer IsNotSmartLookAuto  SubjectIsCoach IsCoachNear400 IsWorldTalkProducer  NoKnowNames
+	Response SurvivorSpottedCoachCloseC1Producer
+}
+
+Response SurvivorSpottedCoachFarC1Producer
+{
+	scene "scenes/Producer/NameCoach01.vcd"  //Coach!
+	scene "scenes/Producer/NameCoach03.vcd"  //Coach!
+	scene "scenes/Producer/NameCoach05.vcd"  //Coach!
+	scene "scenes/Producer/NameCoach10.vcd"  //Coach!
+	scene "scenes/Producer/NameCoach12.vcd"  //Hey Big Guy!
+	scene "scenes/Producer/NameCoach16.vcd"  //Big Guy!
+}
+Rule SurvivorSpottedCoachFarC1Producer
+{
+	criteria ConceptPlayerLook IsNotCoughing IsProducer IsTalk IsTalkProducer IsNotSmartLookAuto SubjectIsCoach IsCoachFar400 IsWorldTalkProducer  NoKnowNames
+	Response SurvivorSpottedCoachFarC1Producer
+}
+
+Response SurvivorSpottedGamblerClose2C1Producer
+{
+	scene "scenes/Producer/NameGamblerC101.vcd"  //Suit.
+	scene "scenes/Producer/NameGamblerC106.vcd"  //Suit.
+	scene "scenes/Producer/NameGamblerC108.vcd"  //Hey, fancy man.
+	scene "scenes/Producer/NameGamblerC111.vcd"  //Hey sharp dresser.
+}
+Rule SurvivorSpottedGamblerClose2C1Producer
+{
+	criteria ConceptPlayerLook IsNotCoughing IsProducer IsTalk IsTalkProducer IsNotSmartLookAuto  SubjectIsGambler IsGamblerNear400 IsWorldTalkProducer  NoKnowNames
+	Response SurvivorSpottedGamblerClose2C1Producer
+}
+
+Response SurvivorSpottedGamblerCloseC1Producer
+{
+	scene "scenes/Producer/NameGamblerC101.vcd"  //Suit.
+	scene "scenes/Producer/NameGamblerC106.vcd"  //Suit.
+	scene "scenes/Producer/NameGamblerC108.vcd"  //Hey, fancy man.
+	scene "scenes/Producer/NameGamblerC111.vcd"  //Hey sharp dresser.
+}
+Rule SurvivorSpottedGamblerCloseC1Producer
+{
+	criteria ConceptPlayerLookHere IsNotCoughing IsProducer IsTalk IsTalkProducer IsNotSmartLookAuto  SubjectIsGambler IsGamblerNear400 IsWorldTalkProducer  NoKnowNames
+	Response SurvivorSpottedGamblerCloseC1Producer
+}
+
+Response SurvivorSpottedGamblerFarC1Producer
+{
+	scene "scenes/Producer/NameGamblerC102.vcd"  //Fancy man.
+	scene "scenes/Producer/NameGamblerC105.vcd"  //Suit.
+	scene "scenes/Producer/NameGamblerC107.vcd"  //Fancy man.
+	scene "scenes/Producer/NameGamblerC112.vcd"  //Hey sharp dresser.
+}
+Rule SurvivorSpottedGamblerFarC1Producer
+{
+	criteria ConceptPlayerLook IsNotCoughing IsProducer IsTalk IsTalkProducer IsNotSmartLookAuto SubjectIsGambler IsGamblerFar400 IsWorldTalkProducer  NoKnowNames
+	Response SurvivorSpottedGamblerFarC1Producer
+}
+
+Response SurvivorSpottedMechanicClose2C1Producer
+{
+	scene "scenes/Producer/NameMechanicC111.vcd"  //Hey, Little Guy.
+	scene "scenes/Producer/NameMechanicC112.vcd"  //Yo, youngin!
+	scene "scenes/Producer/NameMechanicC113.vcd"  //Yo, dude!
+}
+Rule SurvivorSpottedMechanicClose2C1Producer
+{
+	criteria ConceptPlayerLook IsNotCoughing IsProducer IsTalk IsTalkProducer IsNotSmartLookAuto  SubjectIsMechanic IsMechanicNear400 IsWorldTalkProducer  NoKnowNames
+	Response SurvivorSpottedMechanicClose2C1Producer
+}
+
+Response SurvivorSpottedMechanicCloseC1Producer
+{
+	scene "scenes/Producer/NameMechanicC111.vcd"  //Hey, Little Guy.
+	scene "scenes/Producer/NameMechanicC112.vcd"  //Yo, youngin!
+	scene "scenes/Producer/NameMechanicC113.vcd"  //Yo, dude!
+}
+Rule SurvivorSpottedMechanicCloseC1Producer
+{
+	criteria ConceptPlayerLookHere IsNotCoughing IsProducer IsTalk IsTalkProducer IsNotSmartLookAuto  SubjectIsMechanic IsMechanicNear400 IsWorldTalkProducer  NoKnowNames
+	Response SurvivorSpottedMechanicCloseC1Producer
+}
+
+Response SurvivorSpottedMechanicFarC1Producer
+{
+	scene "scenes/Producer/NameMechanicC101.vcd"  //Youngin!
+	scene "scenes/Producer/NameMechanicC102.vcd"  //Little Guy.
+	scene "scenes/Producer/NameMechanicC103.vcd"  //Dude!
+	scene "scenes/Producer/NameMechanicC104.vcd"  //Yo, dude!
+	scene "scenes/Producer/NameMechanicC105.vcd"  //Hey, Little Guy.
+	scene "scenes/Producer/NameMechanicC106.vcd"  //Hey, Little Guy.
+	scene "scenes/Producer/NameMechanicC107.vcd"  //Yo, youngin!
+	scene "scenes/Producer/NameMechanicC108.vcd"  //Hey, youngin!
+	scene "scenes/Producer/NameMechanicC109.vcd"  //Hey, dude!
+	scene "scenes/Producer/NameMechanicC110.vcd"  //Hey, dude!
+}
+Rule SurvivorSpottedMechanicFarC1Producer
+{
+	criteria ConceptPlayerLook IsNotCoughing IsProducer IsTalk IsTalkProducer IsNotSmartLookAuto SubjectIsMechanic IsMechanicFar400 IsWorldTalkProducer  NoKnowNames
+	Response SurvivorSpottedMechanicFarC1Producer
+}
+
+//--------------------------------------------------------------------------------------------------------------
+// Not Rosetta - Responses
+//--------------------------------------------------------------------------------------------------------------
+
+Response PlayerAlertGiveItemC1Producer
+{
+	scene "scenes/Producer/AlertGiveItemC101.vcd"  //You're gonna need this.
+}
+Rule PlayerAlertGiveItemC1Producer
+{
+	criteria ConceptPlayerAlertGiveItem IsNotCoughing IsProducer IsTalk IsTalkProducer  IsWorldTalkProducer NoKnowNames  NoKnowNames
+	Response PlayerAlertGiveItemC1Producer
+}
+
+Response PlayerFriendlyFireC1Producer
+{
+	scene "scenes/Producer/FriendlyFireC101.vcd"  //Hey! What's your name. Don't shoot me!
+	scene "scenes/Producer/FriendlyFireC102.vcd"  //Dude, don't shoot me!
+}
+Rule PlayerFriendlyFireC1Producer
+{
+	criteria ConceptPlayerFriendlyFire IsNotCoughing IsProducer IsNotProducerFriendlyFire IsDamageTypeBullet IsTalk IsTalkProducer  IsWorldTalkProducer  NoKnowNames  NoKnowNames
+	ApplyContext "ProducerFriendlyFire:1:10"
+	applycontexttoworld
+	Response PlayerFriendlyFireC1Producer
+}
+
+Response PlayerFriendlyFireFromGamblerC1Producer
+{
+	scene "scenes/Producer/FriendlyFireC1Nick01.vcd"  //Hey - in the suit, STOP SHOOTING ME!
+}
+Rule PlayerFriendlyFireFromGamblerC1Producer
+{
+	criteria ConceptPlayerFriendlyFire IsNotCoughing IsProducer IsNotProducerFriendlyFire IsDamageTypeBullet IsTalk IsTalkProducer SubjectIsGambler ChanceToFire50Percent IsWorldTalkProducer  NoKnowNames
+	ApplyContext "ProducerFriendlyFire:1:10"
+	applycontexttoworld
+	Response PlayerFriendlyFireFromGamblerC1Producer
+}
+
+Response PlayerFriendlyFireNoBulletC1Producer
+{
+	scene "scenes/Producer/FriendlyFire04.vcd"  //Have you lost your mind?
+	scene "scenes/Producer/FriendlyFire09.vcd"  //ow! HEY!
+	scene "scenes/Producer/FriendlyFire12.vcd"  //Hey, hey, hey, hey, seriously?
+}
+Rule PlayerFriendlyFireNoBulletC1Producer
+{
+	criteria ConceptPlayerFriendlyFire IsNotCoughing IsProducer IsNotProducerFriendlyFire IsNotDamageTypeBullet IsTalk IsTalkProducer IsWorldTalkProducer  NoKnowNames
+	ApplyContext "ProducerFriendlyFire:1:10"
+	Response PlayerFriendlyFireNoBulletC1Producer
+}
+
+Response PlayerAlertGiveItemStopC1Producer
+{
+	scene "scenes/Producer/AlertGiveItemStopC101.vcd"  //Hey! Hey, uh, you!  I got something for you.
+}
+Rule PlayerAlertGiveItemStopC1Producer
+{
+	criteria ConceptAlertGiveItemStop IsNotCoughing IsProducer IsTalk IsTalkProducer IsNotSaidAlertGiveItemStopProducer  IsWorldTalkProducer   NoKnowNames
+	ApplyContext "SaidAlertGiveItemStopProducer:1:10"
+	Response PlayerAlertGiveItemStopC1Producer
+}
+
+
+

@@ -1,0 +1,307 @@
+//--------------------------------------------------------------------------------------------------------------
+// Mechanic Response Rule File
+//--------------------------------------------------------------------------------------------------------------
+
+Criterion "MechanicNotPickedUpItem" "MechanicPickedUpItem" "!=1" "required" weight 0
+Criterion "MechanicNotSaidGrabbingCan" "SaidGrabbingCan" "!=1" "required" weight 0
+Criterion "IsMechanicFriendlyFire" "worldMechanicFriendlyFire" "1" "required" weight 0
+Criterion "IsNotMechanicFriendlyFire" "worldMechanicFriendlyFire" "!=1" "required" weight 0
+Criterion "IsNotAskedForCoverMechanic" "MechanicAskForCover" "!=1" "required" weight 0
+Criterion "IsNotSaidMechanicWitchChasing" "SaidMechanicWitchChasing" "!=1" "required" weight 0
+Criterion "IsNotSaidAlertGiveItemStopMechanic" "SaidAlertGiveItemStopMechanic" "!=1" "required" weight 0
+Criterion "IsNotSaidAlertGiveItemStopFirstAidMechanic" "SaidAlertGiveItemStopFirstAidMechanic" "!=1" "required" weight 0
+Criterion "IsNotSaidBeenJockeyedMechanic" "SaidBeenJockeyedMechanic" "!=1" "required" weight 0
+Criterion "IsSaidMechanicWitchAttacking" "SaidMechanicWitchAttacking" "1" "required" weight 0
+
+Response SurvivorMournCoachC1Mechanic
+{
+	scene "scenes/Mechanic/SurvivorMournCoachC101.vcd"  //Man, I was hoping me and coach were gonna be friends.
+}
+Rule SurvivorMournCoachC1Mechanic
+{
+	criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsMechanic IsDeadCoach IsNotSaidSomeoneDied IsTalk IsTalkMechanic IsNotIncapacitated  HasNotDefibrillator IsWorldTalkMechanic  NoKnowNames 
+	Response SurvivorMournCoachC1Mechanic
+}
+
+Response SurvivorMournGamblerC1Mechanic
+{
+	scene "scenes/Mechanic/SurvivorMournGamblerC101.vcd"  //Bet he didn't think he'd die before me.
+}
+Rule SurvivorMournGamblerC1Mechanic
+{
+	criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsMechanic IsDeadGambler IsNotSaidSomeoneDied IsTalk IsTalkMechanic IsNotIncapacitated  HasNotDefibrillator IsWorldTalkMechanic  NoKnowNames 
+	Response SurvivorMournGamblerC1Mechanic
+}
+
+Response SurvivorMournProducerC1Mechanic
+{
+	scene "scenes/Mechanic/SurvivorMournProducerC101.vcd"  //She was the last one I wanted to see go.
+	scene "scenes/Mechanic/SurvivorMournProducerC102.vcd"  //She was the last one I wanted to see go.
+}
+Rule SurvivorMournProducerC1Mechanic
+{
+	criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsMechanic IsDeadProducer IsNotSaidSomeoneDied IsTalk IsTalkMechanic IsNotIncapacitated  HasNotDefibrillator IsWorldTalkMechanic  NoKnowNames 
+	Response SurvivorMournProducerC1Mechanic
+}
+
+Response SurvivorSpottedCoachClose2C1Mechanic
+{
+	scene "scenes/Mechanic/NameCoach01.vcd"  //Hey Coach!
+	scene "scenes/Mechanic/NameCoach02.vcd"  //Coach.
+	scene "scenes/Mechanic/NameCoach05.vcd"  //Coach, Coach, Coach.
+	scene "scenes/Mechanic/NameCoach09.vcd"  //Coach.
+	scene "scenes/Mechanic/NameCoach10.vcd"  //Coach.
+}
+Rule SurvivorSpottedCoachClose2C1Mechanic
+{
+	criteria ConceptPlayerLook IsNotCoughing IsMechanic IsTalk IsTalkMechanic IsNotSmartLookAuto  SubjectIsCoach IsCoachNear400 IsWorldTalkMechanic  NoKnowNames
+	Response SurvivorSpottedCoachClose2C1Mechanic
+}
+
+Response SurvivorSpottedCoachCloseC1Mechanic
+{
+	scene "scenes/Mechanic/NameCoach01.vcd"  //Hey Coach!
+	scene "scenes/Mechanic/NameCoach02.vcd"  //Coach.
+	scene "scenes/Mechanic/NameCoach05.vcd"  //Coach, Coach, Coach.
+	scene "scenes/Mechanic/NameCoach09.vcd"  //Coach.
+	scene "scenes/Mechanic/NameCoach10.vcd"  //Coach.
+}
+Rule SurvivorSpottedCoachCloseC1Mechanic
+{
+	criteria ConceptPlayerLookHere IsNotCoughing IsMechanic IsTalk IsTalkMechanic IsNotSmartLookAuto  SubjectIsCoach IsCoachNear400 IsWorldTalkMechanic  NoKnowNames
+	Response SurvivorSpottedCoachCloseC1Mechanic
+}
+
+Response SurvivorSpottedGamblerClose2C1Mechanic
+{
+	scene "scenes/Mechanic/NameGamblerC102.vcd"  //Excuse me sir.
+	scene "scenes/Mechanic/NameGamblerC104.vcd"  //Excuse me sir.
+	scene "scenes/Mechanic/NameGamblerC105.vcd"  //Mr Gambling Man.
+	scene "scenes/Mechanic/NameGamblerC106.vcd"  //You in the suit.
+	scene "scenes/Mechanic/NameGamblerC110.vcd"  //Excuse me sir.
+	scene "scenes/Mechanic/NameGamblerC111.vcd"  //Hey sir.
+}
+Rule SurvivorSpottedGamblerClose2C1Mechanic
+{
+	criteria ConceptPlayerLook IsNotCoughing IsMechanic IsTalk IsTalkMechanic IsNotSmartLookAuto  SubjectIsGambler IsGamblerNear400 IsWorldTalkMechanic  NoKnowNames
+	Response SurvivorSpottedGamblerClose2C1Mechanic
+}
+
+Response SurvivorSpottedGamblerCloseC1Mechanic
+{
+	scene "scenes/Mechanic/NameGamblerC102.vcd"  //Excuse me sir.
+	scene "scenes/Mechanic/NameGamblerC104.vcd"  //Excuse me sir.
+	scene "scenes/Mechanic/NameGamblerC105.vcd"  //Mr Gambling Man.
+	scene "scenes/Mechanic/NameGamblerC106.vcd"  //You in the suit.
+	scene "scenes/Mechanic/NameGamblerC110.vcd"  //Excuse me sir.
+	scene "scenes/Mechanic/NameGamblerC111.vcd"  //Hey sir.
+}
+Rule SurvivorSpottedGamblerCloseC1Mechanic
+{
+	criteria ConceptPlayerLookHere IsNotCoughing IsMechanic IsTalk IsTalkMechanic IsNotSmartLookAuto  SubjectIsGambler IsGamblerNear400 IsWorldTalkMechanic  NoKnowNames
+	Response SurvivorSpottedGamblerCloseC1Mechanic
+}
+
+Response SurvivorSpottedGamblerFarC1Mechanic
+{
+	scene "scenes/Mechanic/NameGamblerC101.vcd"  //Sir.
+	scene "scenes/Mechanic/NameGamblerC103.vcd"  //Excuse me sir.
+	scene "scenes/Mechanic/NameGamblerC107.vcd"  //Hey you in the suit.
+	scene "scenes/Mechanic/NameGamblerC108.vcd"  //Mr Gambling Man.
+}
+Rule SurvivorSpottedGamblerFarC1Mechanic
+{
+	criteria ConceptPlayerLook IsNotCoughing IsMechanic IsTalk IsTalkMechanic IsNotSmartLookAuto SubjectIsGambler IsGamblerFar400 IsWorldTalkMechanic  NoKnowNames
+	Response SurvivorSpottedGamblerFarC1Mechanic
+}
+
+Response SurvivorSpottedProducerClose2C1Mechanic
+{
+	scene "scenes/Mechanic/NameProducerC101.vcd"  //Ma'am.
+	scene "scenes/Mechanic/NameProducerC102.vcd"  //Ma'am.
+	scene "scenes/Mechanic/NameProducerC105.vcd"  //Miss.
+	scene "scenes/Mechanic/NameProducerC106.vcd"  //Excuse me, miss.
+	scene "scenes/Mechanic/NameProducerC107.vcd"  //Miss.
+	scene "scenes/Mechanic/NameProducerC109.vcd"  //Miss.
+}
+Rule SurvivorSpottedProducerClose2C1Mechanic
+{
+	criteria ConceptPlayerLook IsNotCoughing IsMechanic IsTalk IsTalkMechanic IsNotSmartLookAuto  SubjectIsProducer IsProducerNear400 IsWorldTalkMechanic  NoKnowNames
+	Response SurvivorSpottedProducerClose2C1Mechanic
+}
+
+Response SurvivorSpottedProducerCloseC1Mechanic
+{
+	scene "scenes/Mechanic/NameProducerC101.vcd"  //Ma'am.
+	scene "scenes/Mechanic/NameProducerC102.vcd"  //Ma'am.
+	scene "scenes/Mechanic/NameProducerC105.vcd"  //Miss.
+	scene "scenes/Mechanic/NameProducerC106.vcd"  //Excuse me, miss.
+	scene "scenes/Mechanic/NameProducerC107.vcd"  //Miss.
+	scene "scenes/Mechanic/NameProducerC109.vcd"  //Miss.
+}
+Rule SurvivorSpottedProducerCloseC1Mechanic
+{
+	criteria ConceptPlayerLookHere IsNotCoughing IsMechanic IsTalk IsTalkMechanic IsNotSmartLookAuto  SubjectIsProducer IsProducerNear400 IsWorldTalkMechanic  NoKnowNames
+	Response SurvivorSpottedProducerCloseC1Mechanic
+}
+
+Response SurvivorSpottedProducerFarC1Mechanic
+{
+	scene "scenes/Mechanic/NameProducerC103.vcd"  //Ma'am.
+	scene "scenes/Mechanic/NameProducerC104.vcd"  //Ma'am.
+	scene "scenes/Mechanic/NameProducerC108.vcd"  //Miss.
+}
+Rule SurvivorSpottedProducerFarC1Mechanic
+{
+	criteria ConceptPlayerLook IsNotCoughing IsMechanic IsTalk IsTalkMechanic IsNotSmartLookAuto SubjectIsProducer  IsProducerFar400 IsWorldTalkMechanic  NoKnowNames
+	Response SurvivorSpottedProducerFarC1Mechanic
+}
+
+Response PlayerFriendlyFireC1Mechanic
+{
+	scene "scenes/Mechanic/FriendlyFireC101.vcd"  //In case y'all didn't know - it hurts to get shot!
+	scene "scenes/Mechanic/FriendlyFireC102.vcd"  //Why don't we save those bullets for the zombies.
+}
+Rule PlayerFriendlyFireC1Mechanic
+{
+	criteria ConceptPlayerFriendlyFire IsNotCoughing IsMechanic IsNotMechanicFriendlyFire IsDamageTypeBullet IsTalk IsTalkMechanic  IsWorldTalkMechanic  NoKnowNames  NoKnowNames
+	ApplyContext "MechanicFriendlyFire:1:10"
+	applycontexttoworld
+	Response PlayerFriendlyFireC1Mechanic
+}
+
+Response PlayerFriendlyFireFromCoachC1Mechanic
+{
+	scene "scenes/Mechanic/FriendlyFireC1Coach01.vcd"  //I can see you weren't the shootin' coach.
+	scene "scenes/Mechanic/FriendlyFireC1Coach02.vcd"  //Yo Coach! Stop shootin' me!
+}
+Rule PlayerFriendlyFireFromCoachC1Mechanic
+{
+	criteria ConceptPlayerFriendlyFire IsNotCoughing IsMechanic IsNotMechanicFriendlyFire IsDamageTypeBullet IsTalk IsTalkMechanic SubjectIsCoach ChanceToFire50Percent IsWorldTalkMechanic  NoKnowNames
+	ApplyContext "MechanicFriendlyFire:1:10"
+	applycontexttoworld
+	Response PlayerFriendlyFireFromCoachC1Mechanic
+}
+
+Response PlayerFriendlyFireFromGamblerC1Mechanic
+{
+	scene "scenes/Mechanic/FriendlyFireC1Gambler01.vcd"  //Nick! Did you mean to do that?
+	scene "scenes/Mechanic/FriendlyFireC1Gambler02.vcd"  //Nick! I know that was you shootin' me.
+}
+Rule PlayerFriendlyFireFromGamblerC1Mechanic
+{
+	criteria ConceptPlayerFriendlyFire IsNotCoughing IsMechanic IsNotMechanicFriendlyFire IsDamageTypeBullet IsTalk IsTalkMechanic SubjectIsGambler ChanceToFire50Percent IsWorldTalkMechanic  NoKnowNames
+	ApplyContext "MechanicFriendlyFire:1:10"
+	applycontexttoworld
+	Response PlayerFriendlyFireFromGamblerC1Mechanic
+}
+
+Response PlayerFriendlyFireFromProducerC1Mechanic
+{
+	scene "scenes/Mechanic/FriendlyFireC1Producer01.vcd"  //Ma'am you want me to show you how to work that thing?
+	scene "scenes/Mechanic/FriendlyFireC1Producer02.vcd"  //Rochelle, STOP GIRL!
+	scene "scenes/Mechanic/FriendlyFireC1Producer03.vcd"  //Okay, Rochelle, I know that was you shootin' me.
+}
+Rule PlayerFriendlyFireFromProducerC1Mechanic
+{
+	criteria ConceptPlayerFriendlyFire IsNotCoughing IsMechanic IsNotMechanicFriendlyFire IsDamageTypeBullet IsTalk IsTalkMechanic SubjectIsProducer ChanceToFire50Percent IsWorldTalkMechanic  NoKnowNames
+	ApplyContext "MechanicFriendlyFire:1:10"
+	applycontexttoworld
+	Response PlayerFriendlyFireFromProducerC1Mechanic
+}
+
+Response PlayerFriendlyFireNoBulletC1Mechanic
+{
+	scene "scenes/Mechanic/FriendlyFire05.vcd"  //That's not cool.  Seriously.
+	scene "scenes/Mechanic/FriendlyFire26.vcd"  //Woah, woah that hurts!
+	scene "scenes/Mechanic/FriendlyFire33.vcd"  //We're on the same team!
+}
+Rule PlayerFriendlyFireNoBulletC1Mechanic
+{
+	criteria ConceptPlayerFriendlyFire IsNotCoughing IsMechanic IsNotMechanicFriendlyFire IsNotDamageTypeBullet IsTalk IsTalkMechanic IsWorldTalkMechanic  NoKnowNames
+	ApplyContext "MechanicFriendlyFire:1:10"
+	Response PlayerFriendlyFireNoBulletC1Mechanic
+}
+
+Response PlayerAlertGiveItemStopC1Mechanic
+{
+	scene "scenes/Mechanic/AlertGiveItemStopC101.vcd"  //Dude, dude, hold up.
+	scene "scenes/Mechanic/AlertGiveItemStopC102.vcd"  //Hey umm...  you! Hold up!
+}
+Rule PlayerAlertGiveItemStopC1Mechanic
+{
+	criteria ConceptAlertGiveItemStop IsNotCoughing IsMechanic IsTalk IsTalkMechanic IsNotSaidAlertGiveItemStopMechanic  IsWorldTalkMechanic   NoKnowNames
+	ApplyContext "SaidAlertGiveItemStopMechanic:1:10"
+	Response PlayerAlertGiveItemStopC1Mechanic
+}
+
+Response PlayerSuggestHealthCoachC1Mechanic
+{
+	scene "scenes/Mechanic/SuggestHealthC101.vcd"  //Don't forget your health kits.
+	scene "scenes/Mechanic/SuggestHealthC102.vcd"  //Anybody want to heal now?
+	scene "scenes/Mechanic/SuggestHealthC103.vcd"  //Good time to heal.
+}
+Rule PlayerSuggestHealthCoachC1Mechanic
+{
+	criteria ConceptPlayerSuggestHealthCoach IsMechanic IssuerReallyClose IsNotSuggestedHealth IsNotBeingHealed IsTalk IsTalkMechanic  NotInCombat IsWorldTalkMechanic  NoKnowNames
+	ApplyContext "SuggestedHealth:1:120"
+	applycontexttoworld
+	Response PlayerSuggestHealthCoachC1Mechanic
+}
+
+Response PlayerSuggestHealthGamblerC1Mechanic
+{
+	scene "scenes/Mechanic/SuggestHealthC101.vcd"  //Don't forget your health kits.
+	scene "scenes/Mechanic/SuggestHealthC102.vcd"  //Anybody want to heal now?
+	scene "scenes/Mechanic/SuggestHealthC103.vcd"  //Good time to heal.
+}
+Rule PlayerSuggestHealthGamblerC1Mechanic
+{
+	criteria ConceptPlayerSuggestHealthGambler IsMechanic IssuerReallyClose IsNotSuggestedHealth IsNotBeingHealed IsTalk IsTalkMechanic  NotInCombat IsWorldTalkMechanic  NoKnowNames
+	ApplyContext "SuggestedHealth:1:120"
+	applycontexttoworld
+	Response PlayerSuggestHealthGamblerC1Mechanic
+}
+
+Response PlayerSuggestHealthMechanicC1Mechanic
+{
+	scene "scenes/Mechanic/SuggestHealthC101.vcd"  //Don't forget your health kits.
+	scene "scenes/Mechanic/SuggestHealthC102.vcd"  //Anybody want to heal now?
+	scene "scenes/Mechanic/SuggestHealthC103.vcd"  //Good time to heal.
+}
+Rule PlayerSuggestHealthMechanicC1Mechanic
+{
+	criteria ConceptPlayerSuggestHealthMechanic IsMechanic IssuerReallyClose IsNotSuggestedHealth IsNotBeingHealed IsTalk IsTalkMechanic  NotInCombat IsWorldTalkMechanic  NoKnowNames
+	ApplyContext "SuggestedHealth:1:120"
+	applycontexttoworld
+	Response PlayerSuggestHealthMechanicC1Mechanic
+}
+
+Response PlayerSuggestHealthProducerC1Mechanic
+{
+	scene "scenes/Mechanic/SuggestHealthC101.vcd"  //Don't forget your health kits.
+	scene "scenes/Mechanic/SuggestHealthC102.vcd"  //Anybody want to heal now?
+	scene "scenes/Mechanic/SuggestHealthC103.vcd"  //Good time to heal.
+}
+Rule PlayerSuggestHealthProducerC1Mechanic
+{
+	criteria ConceptPlayerSuggestHealthProducer IsMechanic IssuerReallyClose IsNotSuggestedHealth IsNotBeingHealed IsTalk IsTalkMechanic  NotInCombat IsWorldTalkMechanic  NoKnowNames
+	ApplyContext "SuggestedHealth:1:120"
+	applycontexttoworld
+	Response PlayerSuggestHealthProducerC1Mechanic
+}
+
+Response PlayerHealOtherC1Mechanic
+{
+	scene "scenes/Mechanic/HealOtherC101.vcd"  //I don't know what I'm doin, so hold on a minute.
+	scene "scenes/Mechanic/HealOtherC102.vcd"  //I don't know what I'm doin, so just hold on.
+	scene "scenes/Mechanic/HealOtherC103.vcd"  //Let me try and fix you up.
+	scene "scenes/Mechanic/HealOtherC104.vcd"  //I better practice on you before I do this on myself.
+	scene "scenes/Mechanic/HealOtherC105.vcd"  //Hang on a minute, I think it goes somethin' like this.
+}
+Rule PlayerHealOtherC1Mechanic
+{
+	criteria ConceptPlayerHealingOther IsNotCoughing  IsMechanic IsTalk IsTalkMechanic  IsWorldTalkMechanic  NoKnowNames
+	Response PlayerHealOtherC1Mechanic
+}
+

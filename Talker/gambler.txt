@@ -1,0 +1,346 @@
+//--------------------------------------------------------------------------------------------------------------
+// Gambler Response Rule File
+//--------------------------------------------------------------------------------------------------------------
+
+Criterion "GamblerNotPickedUpItem" "GamblerPickedUpItem" "!=1" "required" weight 0
+Criterion "GamblerNotSaidGrabbingCan" "SaidGrabbingCan" "!=1" "required" weight 0
+Criterion "IsGamblerFriendlyFire" "worldGamblerFriendlyFire" "1" "required" weight 0
+Criterion "IsNotGamblerFriendlyFire" "worldGamblerFriendlyFire" "!=1" "required" weight 0
+Criterion "IsNotAskedForCoverGambler" "GamblerAskForCover" "!=1" "required" weight 0
+Criterion "IsNotSaidGamblerWitchChasing" "SaidGamblerWitchChasing" "!=1" "required" weight 0
+Criterion "IsNotSaidAlertGiveItemStopGambler" "SaidAlertGiveItemStopGambler" "!=1" "required" weight 0
+Criterion "IsNotSaidAlertGiveItemStopFirstAidGambler" "SaidAlertGiveItemStopFirstAidGambler" "!=1" "required" weight 0
+Criterion "IsNotSaidBeenJockeyedGambler" "SaidBeenJockeyedGambler" "!=1" "required" weight 0
+Criterion "IsSaidGamblerWitchAttacking" "SaidGamblerWitchAttacking" "1" "required" weight 0
+
+Response SurvivorSpottedMechanicClose2C1Gambler
+{
+	scene "scenes/Gambler/NameMechanicC104.vcd"  //Dude.
+	scene "scenes/Gambler/NameMechanicC106.vcd"  //hey kid.
+	scene "scenes/Gambler/NameMechanicC107.vcd"  //Kid.
+	scene "scenes/Gambler/NameMechanicC108.vcd"  //Kid.
+	scene "scenes/Gambler/NameMechanicC109.vcd"  //Kid.
+	scene "scenes/Gambler/NameMechanicC110.vcd"  //Kid.
+	scene "scenes/Gambler/NameMechanicC111.vcd"  //Kid.
+}
+Rule SurvivorSpottedMechanicClose2C1Gambler
+{
+	criteria ConceptPlayerLook IsNotCoughing IsGambler IsTalk IsTalkGambler IsNotSmartLookAuto  SubjectIsMechanic IsMechanicNear400 IsWorldTalkGambler NoKnowNames 
+	Response SurvivorSpottedMechanicClose2C1Gambler
+}
+
+Response SurvivorSpottedMechanicCloseC1Gambler
+{
+	scene "scenes/Gambler/NameMechanicC104.vcd"  //Dude.
+	scene "scenes/Gambler/NameMechanicC106.vcd"  //hey kid.
+	scene "scenes/Gambler/NameMechanicC107.vcd"  //Kid.
+	scene "scenes/Gambler/NameMechanicC108.vcd"  //Kid.
+	scene "scenes/Gambler/NameMechanicC109.vcd"  //Kid.
+	scene "scenes/Gambler/NameMechanicC110.vcd"  //Kid.
+	scene "scenes/Gambler/NameMechanicC111.vcd"  //Kid.
+}
+
+Response SurvivorSpottedMechanicFarC1Gambler
+{
+	scene "scenes/Gambler/NameMechanicC101.vcd"  //Dude.
+	scene "scenes/Gambler/NameMechanicC102.vcd"  //Dude.
+	scene "scenes/Gambler/NameMechanicC103.vcd"  //Dude.
+	scene "scenes/Gambler/NameMechanicC105.vcd"  //Kid.
+}
+Rule SurvivorSpottedMechanicFarC1Gambler
+{
+	criteria ConceptPlayerLook IsNotCoughing IsGambler IsTalk IsTalkGambler IsNotSmartLookAuto SubjectIsMechanic IsMechanicFar400 IsWorldTalkGambler  NoKnowNames 
+	Response SurvivorSpottedMechanicFarC1Gambler
+}
+
+Rule SurvivorSpottedMechanicCloseC1Gambler
+{
+	criteria ConceptPlayerLookHere IsNotCoughing IsGambler IsTalk IsTalkGambler IsNotSmartLookAuto  SubjectIsMechanic IsMechanicNear400 IsWorldTalkGambler NoKnowNames 
+	Response SurvivorSpottedMechanicCloseC1Gambler
+}
+
+Response SurvivorSpottedCoachClose2C1Gambler
+{
+	scene "scenes/Gambler/NameCoach02.vcd"  //Coach!
+	scene "scenes/Gambler/NameCoach03.vcd"  //Coach!
+	scene "scenes/Gambler/NameCoach04.vcd"  //Coach.
+}
+Rule SurvivorSpottedCoachClose2C1Gambler
+{
+	criteria ConceptPlayerLook IsNotCoughing IsGambler IsTalk IsTalkGambler IsNotSmartLookAuto  SubjectIsCoach IsCoachNear400 IsWorldTalkGambler  NoKnowNames 
+	Response SurvivorSpottedCoachClose2C1Gambler
+}
+
+Response SurvivorSpottedCoachCloseC1Gambler
+{
+	scene "scenes/Gambler/NameCoach02.vcd"  //Coach!
+	scene "scenes/Gambler/NameCoach03.vcd"  //Coach!
+	scene "scenes/Gambler/NameCoach04.vcd"  //Coach.
+}
+Rule SurvivorSpottedCoachCloseC1Gambler
+{
+	criteria ConceptPlayerLookHere IsNotCoughing IsGambler IsTalk IsTalkGambler IsNotSmartLookAuto  SubjectIsCoach IsCoachNear400 IsWorldTalkGambler  NoKnowNames 
+	Response SurvivorSpottedCoachCloseC1Gambler
+}
+
+Response SurvivorSpottedProducerClose2C1Gambler
+{
+	scene "scenes/Gambler/NameProducerC102.vcd"  //Hey sweetheart.
+	scene "scenes/Gambler/NameProducerC103.vcd"  //Hey sweetie.
+	scene "scenes/Gambler/NameProducerC104.vcd"  //Hey honey.
+	scene "scenes/Gambler/NameProducerC105.vcd"  //Hey honey.
+	scene "scenes/Gambler/NameProducerC107.vcd"  //Hey sweetie.
+	scene "scenes/Gambler/NameProducerC109.vcd"  //Sweetheart.
+	scene "scenes/Gambler/NameProducerC110.vcd"  //Hey you.
+	scene "scenes/Gambler/NameProducerC112.vcd"  //Hey you.
+	scene "scenes/Gambler/NameProducerC113.vcd"  //Sweetie.
+	scene "scenes/Gambler/NameProducerC114.vcd"  //Hey honey.
+}
+Rule SurvivorSpottedProducerClose2C1Gambler
+{
+	criteria ConceptPlayerLook IsNotCoughing IsGambler IsTalk IsTalkGambler IsNotSmartLookAuto  SubjectIsProducer IsProducerNear400 IsWorldTalkGambler NoKnowNames 
+	Response SurvivorSpottedProducerClose2C1Gambler
+}
+
+Response SurvivorSpottedProducerCloseC1Gambler
+{
+	scene "scenes/Gambler/NameProducerC102.vcd"  //Hey sweetheart.
+	scene "scenes/Gambler/NameProducerC103.vcd"  //Hey sweetie.
+	scene "scenes/Gambler/NameProducerC104.vcd"  //Hey honey.
+	scene "scenes/Gambler/NameProducerC105.vcd"  //Hey honey.
+	scene "scenes/Gambler/NameProducerC107.vcd"  //Hey sweetie.
+	scene "scenes/Gambler/NameProducerC109.vcd"  //Sweetheart.
+	scene "scenes/Gambler/NameProducerC110.vcd"  //Hey you.
+	scene "scenes/Gambler/NameProducerC112.vcd"  //Hey you.
+	scene "scenes/Gambler/NameProducerC113.vcd"  //Sweetie.
+	scene "scenes/Gambler/NameProducerC114.vcd"  //Hey honey.
+}
+
+Response AutoYouAreWelcomeC1Gambler
+{
+	scene "scenes/Gambler/YouAreWelcomeC101.vcd"  //Whatever.
+	scene "scenes/Gambler/YouAreWelcomeC102.vcd"  //Um yeah.
+	scene "scenes/Gambler/YouAreWelcomeC103.vcd"  //Sure.
+	scene "scenes/Gambler/YouAreWelcomeC104.vcd"  //Whatever.
+	scene "scenes/Gambler/YouAreWelcomeC105.vcd"  //Sure.
+	scene "scenes/Gambler/YouAreWelcomeC106.vcd"  //Um yeah.
+	scene "scenes/Gambler/YouAreWelcomeC107.vcd"  //Sure.
+	scene "scenes/Gambler/YouAreWelcomeC108.vcd"  //Whatever.
+	scene "scenes/Gambler/YouAreWelcomeC109.vcd"  //Um yeah.
+}
+
+Response SurvivorSpottedProducerFarC1Gambler
+{
+	scene "scenes/Gambler/NameProducerC101.vcd"  //Hey you.
+	scene "scenes/Gambler/NameProducerC108.vcd"  //Sweetie.
+	scene "scenes/Gambler/NameProducerC111.vcd"  //Hey sweetie.
+}
+Rule SurvivorSpottedProducerFarC1Gambler
+{
+	criteria ConceptPlayerLook IsNotCoughing IsGambler IsTalk IsTalkGambler IsNotSmartLookAuto SubjectIsProducer  IsProducerFar400 IsWorldTalkGambler  NoKnowNames 
+	Response SurvivorSpottedProducerFarC1Gambler
+}
+
+Rule AutoYouAreWelcomeC1Gambler
+{
+	criteria ConceptYouWelcome IsNotCoughing  IsGambler IsTalk IsTalkGambler  TimeSinceGroupInCombat05 IsNotSpeaking IsCampaignl4d2_1 IsWorldTalkGambler  NoKnowNames 
+	Response AutoYouAreWelcomeC1Gambler
+}
+
+Response BotPlayer.YourWelcomeC1Gambler
+{
+	scene "scenes/Gambler/YouAreWelcomeC101.vcd" predelay "1,3.5" //Whatever.
+	scene "scenes/Gambler/YouAreWelcomeC102.vcd" predelay "1,3.5" //Um yeah.
+	scene "scenes/Gambler/YouAreWelcomeC103.vcd" predelay "1,3.5" //Sure.
+	scene "scenes/Gambler/YouAreWelcomeC104.vcd" predelay "1,3.5" //Whatever.
+	scene "scenes/Gambler/YouAreWelcomeC105.vcd" predelay "1,3.5" //Sure.
+	scene "scenes/Gambler/YouAreWelcomeC106.vcd" predelay "1,3.5" //Um yeah.
+	scene "scenes/Gambler/YouAreWelcomeC107.vcd" predelay "1,3.5" //Sure.
+	scene "scenes/Gambler/YouAreWelcomeC108.vcd" predelay "1,3.5" //Whatever.
+	scene "scenes/Gambler/YouAreWelcomeC109.vcd" predelay "1,3.5" //Um yeah.
+}
+Rule BotPlayer.YourWelcomeC1Gambler
+{
+	criteria ConceptSurvivorBotYouAreWelcome IsNotCoughing  IsGambler IsTalk IsTalkGambler IsCampaignl4d2_1 IsWorldTalkGambler  NoKnowNames 
+	Response BotPlayer.YourWelcomeC1Gambler
+}
+
+Response PlayerAlertGiveItemC1Gambler
+{
+	scene "scenes/Gambler/AlertGiveItemC101.vcd"  //Hey you, take this.
+	scene "scenes/Gambler/AlertGiveItemC102.vcd"  //What's your name, here you go.
+}
+Rule PlayerAlertGiveItemC1Gambler
+{
+	criteria ConceptPlayerAlertGiveItem IsNotCoughing IsGambler IsTalk IsTalkGambler IsCampaignl4d2_1 IsWorldTalkGambler NoKnowNames 
+	Response PlayerAlertGiveItemC1Gambler
+}
+
+Response PlayerAlertGiveItemCombatGambler
+{
+	scene "scenes/Gambler/AlertGiveItemCombat01.vcd"  //Take this.
+	scene "scenes/Gambler/AlertGiveItemCombat02.vcd"  //Grab this.
+	scene "scenes/Gambler/AlertGiveItemCombat03.vcd"  //Take it.
+}
+
+Response PlayerFriendlyFireC1Gambler
+{
+	scene "scenes/Gambler/FriendlyFireC101.vcd"  //I don't know who started this shit, but lets just stop the friendly right now, 'kay?
+	scene "scenes/Gambler/FriendlyFireC103.vcd"  //Never shoot me again.
+	scene "scenes/Gambler/FriendlyFireC104.vcd"  //You do not want to be shooting me!
+	scene "scenes/Gambler/FriendlyFireC105.vcd"  //Why would you think shooting me is a good idea?
+	scene "scenes/Gambler/FriendlyFireC106.vcd"  //Let's try shooting zombies instead of people, okay?
+}
+Rule PlayerFriendlyFireC1Gambler
+{
+	criteria ConceptPlayerFriendlyFire IsNotCoughing IsGambler IsNotGamblerFriendlyFire IsDamageTypeBullet IsTalk IsTalkGambler IsCampaignl4d2_1 IsWorldTalkGambler  NoKnowNames 
+	ApplyContext "GamblerFriendlyFire:1:10"
+	applycontexttoworld
+	Response PlayerFriendlyFireC1Gambler
+}
+
+Response PlayerFriendlyFireFromCoachC1Gambler
+{
+	scene "scenes/Gambler/FriendlyFireC1Coach01.vcd"  //Coach! Don't shoot me.
+	scene "scenes/Gambler/FriendlyFireC1Coach02.vcd"  //Coach! Come on.
+}
+Rule PlayerFriendlyFireFromCoachC1Gambler
+{
+	criteria ConceptPlayerFriendlyFire IsNotCoughing IsGambler IsNotGamblerFriendlyFire IsDamageTypeBullet IsTalk IsTalkGambler SubjectIsCoach ChanceToFire50Percent IsWorldTalkGambler  NoKnowNames 
+	ApplyContext "GamblerFriendlyFire:1:10"
+	applycontexttoworld
+	Response PlayerFriendlyFireFromCoachC1Gambler
+}
+
+Response PlayerSuggestHealthCoachC1Gambler
+{
+	scene "scenes/Gambler/SuggestHealthC101.vcd"  //This might be a good time to heal.
+	scene "scenes/Gambler/SuggestHealthC102.vcd"  //Time for people to heal.
+	scene "scenes/Gambler/SuggestHealthC103.vcd"  //Don't forget you can heal yourself.
+	scene "scenes/Gambler/SuggestHealthC104.vcd"  //This is a good time to heal.
+	scene "scenes/Gambler/SuggestHealthC105.vcd"  //Time for people to heal.
+}
+Rule PlayerSuggestHealthCoachC1Gambler
+{
+	criteria ConceptPlayerSuggestHealthCoach IsGambler IssuerReallyClose IsNotSuggestedHealth IsNotBeingHealed IsTalk IsTalkGambler  NotInCombat IsWorldTalkGambler  NoKnowNames 
+	ApplyContext "SuggestedHealth:1:120"
+	applycontexttoworld
+	Response PlayerSuggestHealthCoachC1Gambler
+}
+
+Response PlayerSuggestHealthGamblerC1Gambler
+{
+	scene "scenes/Gambler/SuggestHealthC101.vcd"  //This might be a good time to heal.
+	scene "scenes/Gambler/SuggestHealthC102.vcd"  //Time for people to heal.
+	scene "scenes/Gambler/SuggestHealthC103.vcd"  //Don't forget you can heal yourself.
+	scene "scenes/Gambler/SuggestHealthC104.vcd"  //This is a good time to heal.
+	scene "scenes/Gambler/SuggestHealthC105.vcd"  //Time for people to heal.
+}
+Rule PlayerSuggestHealthGamblerC1Gambler
+{
+	criteria ConceptPlayerSuggestHealthGambler IsGambler IssuerReallyClose IsNotSuggestedHealth IsNotBeingHealed IsTalk IsTalkGambler  NotInCombat IsWorldTalkGambler  NoKnowNames 
+	ApplyContext "SuggestedHealth:1:120"
+	applycontexttoworld
+	Response PlayerSuggestHealthGamblerC1Gambler
+}
+
+Response SurvivorMournCoachC1Gambler
+{
+	scene "scenes/Gambler/SurvivorMournCoachC101.vcd"  //I am going to miss you big guy.
+	scene "scenes/Gambler/SurvivorMournCoachC102.vcd"  //Goddamn it coach, what'd you leave me with?
+	scene "scenes/Gambler/SurvivorMournCoachC103.vcd"  //Goddamn it coach, what'd you leave me with?
+}
+Rule SurvivorMournCoachC1Gambler
+{
+	criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsGambler IsDeadCoach IsNotSaidSomeoneDied IsTalk IsTalkGambler IsNotIncapacitated IsCampaignl4d2_1 HasNotDefibrillator IsWorldTalkGambler  NoKnowNames 
+	Response SurvivorMournCoachC1Gambler
+}
+
+Response SurvivorMournMechanicC1Gambler
+{
+	scene "scenes/Gambler/SurvivorMournMechanicC101.vcd"  //He was annoying but he could shoot a gun.
+	scene "scenes/Gambler/SurvivorMournMechanicC102.vcd"  //No time for mourning, let's go.
+	scene "scenes/Gambler/SurvivorMournMechanicC103.vcd"  //He was annoying but he could shoot a gun.
+}
+Rule SurvivorMournMechanicC1Gambler
+{
+	criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsGambler IsDeadMechanic IsNotSaidSomeoneDied IsTalk IsTalkGambler IsNotIncapacitated IsCampaignl4d2_1 HasNotDefibrillator IsWorldTalkGambler  NoKnowNames ismap_c1m1_hotel
+	Response SurvivorMournMechanicC1Gambler
+}
+
+Response SurvivorMournProducerC1Gambler
+{
+	scene "scenes/Gambler/SurvivorMournProducerC101.vcd"  //I can think of two other people I would have rather seen go first.
+	scene "scenes/Gambler/SurvivorMournProducerC102.vcd"  //Guys, what are we going to do now?
+}
+Rule SurvivorMournProducerC1Gambler
+{
+	criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsGambler IsDeadProducer IsNotSaidSomeoneDied IsTalk IsTalkGambler IsNotIncapacitated IsCampaignl4d2_1 HasNotDefibrillator IsWorldTalkGambler  NoKnowNames ismap_c1m1_hotel
+	Response SurvivorMournProducerC1Gambler
+}
+
+//--------------------------------------------------------------------------------------------------------------
+// AutoConvo
+//--------------------------------------------------------------------------------------------------------------
+Response _C1M1_ElevatorHello01Gambler
+{
+	scene "scenes/Gambler/WorldC1M1B52.vcd"  then coach _C1M1_ElevatorHello01a foo:0 -2.673 //Nick, name's Nick. You all did good. What's your names?
+	scene "scenes/Gambler/WorldC1M1B56.vcd"  then gambler _C1M1_ElevatorHello01b foo:0 -0.647 //Name's Nick.
+}
+Rule _C1M1_ElevatorHello01Gambler
+{
+	criteria Concept_C1M1_ElevatorHello01 IsGambler AutoIsNotScavenge AutoIsNotSurvival  IsEveryoneAlive
+	ApplyContext "Talk:1:2.773"
+	applycontexttoworld
+	Response _C1M1_ElevatorHello01Gambler
+}
+
+Response C1M1_ElevatorHello01_02CMGambler
+{
+	scene "scenes/Gambler/WorldC1M1B56.vcd"  then gambler C1M1_ElevatorHello01_03CM2 foo:0 -0.647 //Name's Nick.
+}
+Rule C1M1_ElevatorHello01_02CMGambler
+{
+	criteria Concept_C1M1_ElevatorHello01 IsGambler AutoIsNotScavenge AutoIsNotSurvival  IsWithTwo IsCoachNotAlive IsMechanicNotAlive
+	ApplyContext "Talk:1:0.747"
+	applycontexttoworld
+	Response C1M1_ElevatorHello01_02CMGambler
+}
+
+Response C1M1_ElevatorHello01_02PMGambler
+{
+	scene "scenes/Gambler/WorldC1M1B60.vcd"  then gambler C1M1_ElevatorHello01_03b1 foo:0 -1.859 //There's blood on me, but it ain't mine.
+}
+Rule C1M1_ElevatorHello01_02PMGambler
+{
+	criteria Concept_C1M1_ElevatorHello01 IsGambler AutoIsNotScavenge AutoIsNotSurvival  IsWithTwo IsProducerNotAlive IsMechanicNotAlive
+	ApplyContext "Talk:1:1.959"
+	applycontexttoworld
+	Response C1M1_ElevatorHello01_02PMGambler
+}
+
+Response C1M1_ElevatorHello01_03PGambler
+{
+	scene "scenes/Gambler/WorldC1M1B60.vcd"  then gambler C1M1_ElevatorHello01_03a1 foo:0 -1.859 //There's blood on me, but it ain't mine.
+}
+Rule C1M1_ElevatorHello01_03PGambler
+{
+	criteria Concept_C1M1_ElevatorHello01 IsGambler AutoIsNotScavenge AutoIsNotSurvival  IsWithOnlyThree IsProducerNotAlive
+	ApplyContext "Talk:1:1.959"
+	applycontexttoworld
+	Response C1M1_ElevatorHello01_03PGambler
+}
+
+Response Playerc1m1_enter_elevatorGambler
+{
+	scene "scenes/Gambler/WorldC1M1B36.vcd"  //This elevator's still working!
+	scene "scenes/Gambler/WorldC1M1B37.vcd"  //Technically... you're not supposed to use an elevator in a fire. But that might not apply during a zombie apocalypse.
+	scene "scenes/Gambler/WorldC1M1B38.vcd"  //Everybody get in the elevator!
+}
+Rule Playerc1m1_enter_elevatorGambler
+{
+	criteria Conceptc1m1_enter_elevator IsGambler IsTalk IsTalkGambler IsNotSaidc1m1_enter_elevator AutoIsNotScavenge AutoIsNotSurvival IsWorldTalkGambler
+	ApplyContext "Saidc1m1_enter_elevator:1:0"
+	applycontexttoworld
+	Response Playerc1m1_enter_elevatorGambler
+}

@@ -1,0 +1,325 @@
+//--------------------------------------------------------------------------------------------------------------
+// Coach Response Rule File
+//--------------------------------------------------------------------------------------------------------------
+
+Criterion "CoachNotPickedUpItem" "CoachPickedUpItem" "!=1" "required" weight 0
+Criterion "CoachNotSaidGrabbingCan" "SaidGrabbingCan" "!=1" "required" weight 0
+Criterion "IsCoachFriendlyFire" "worldCoachFriendlyFire" "1" "required" weight 0
+Criterion "IsNotCoachFriendlyFire" "worldCoachFriendlyFire" "!=1" "required" weight 0
+Criterion "IsNotAskedForCoverCoach" "CoachAskForCover" "!=1" "required" weight 0
+Criterion "IsNotSaidCoachWitchChasing" "SaidCoachWitchChasing" "!=1" "required" weight 0
+Criterion "IsNotSaidAlertGiveItemStopCoach" "SaidAlertGiveItemStopCoach" "!=1" "required" weight 0
+Criterion "IsNotSaidAlertGiveItemStopFirstAidCoach" "SaidAlertGiveItemStopFirstAidCoach" "!=1" "required" weight 0
+Criterion "IsNotSaidBeenJockeyedCoach" "SaidBeenJockeyedCoach" "!=1" "required" weight 0
+Criterion "IsSaidCoachWitchAttacking" "SaidCoachWitchAttacking" "1" "required" weight 0
+
+Response SurvivorMournGamblerC1Coach
+{
+	scene "scenes/Coach/SurvivorMournGamblerC101.vcd"  //NIck, we're gonna miss your gun.
+	scene "scenes/Coach/SurvivorMournGamblerC102.vcd"  //Damn. Nick, this just got a whole lot harder.
+}
+Rule SurvivorMournGamblerC1Coach
+{
+	criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsCoach IsDeadGambler IsNotSaidSomeoneDied IsTalk IsTalkCoach IsNotIncapacitated HasNotDefibrillator IsWorldTalkCoach  NoKnowNames 
+	Response SurvivorMournGamblerC1Coach
+}
+
+Response SurvivorMournMechanicC1Coach
+{
+	scene "scenes/Coach/SurvivorMournMechanicC101.vcd"  //Ahh damnit, I can't take losing anymore people.
+	scene "scenes/Coach/SurvivorMournMechanicC102.vcd"  //Little man, we are goin' to miss you.
+}
+Rule SurvivorMournMechanicC1Coach
+{
+	criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsCoach IsDeadMechanic IsNotSaidSomeoneDied IsTalk IsTalkCoach IsNotIncapacitated HasNotDefibrillator IsWorldTalkCoach  NoKnowNames 
+	Response SurvivorMournMechanicC1Coach
+}
+
+Response SurvivorMournProducerC1Coach
+{
+	scene "scenes/Coach/SurvivorMournProducerC101.vcd"  //Gentlemen, we just lost the best thing in our little group.
+	scene "scenes/Coach/SurvivorMournProducerC102.vcd"  //Damn. Baby, I should have tried to protect you more.
+}
+Rule SurvivorMournProducerC1Coach
+{
+	criteria ConceptPlayerSeeDeadPlayer IsNotCoughing IsCoach IsDeadProducer IsNotSaidSomeoneDied IsTalk IsTalkCoach IsNotIncapacitated HasNotDefibrillator IsWorldTalkCoach  NoKnowNames 
+	Response SurvivorMournProducerC1Coach
+}
+
+Response SurvivorSpottedGamblerClose2C1Coach
+{
+	scene "scenes/Coach/NameGamblerC104.vcd"  //Hey suit.
+	scene "scenes/Coach/NameGamblerC105.vcd"  //Hey suit.
+	scene "scenes/Coach/NameGamblerC106.vcd"  //Hey suit.
+	scene "scenes/Coach/NameGamblerC107.vcd"  //Sir.
+	scene "scenes/Coach/NameGamblerC108.vcd"  //Sir.
+}
+Rule SurvivorSpottedGamblerClose2C1Coach
+{
+	criteria ConceptPlayerLook IsNotCoughing IsCoach IsTalk IsTalkCoach IsNotSmartLookAuto  SubjectIsGambler IsGamblerNear400 IsWorldTalkCoach  NoKnowNames
+	Response SurvivorSpottedGamblerClose2C1Coach
+}
+
+Response SurvivorSpottedGamblerCloseC1Coach
+{
+	scene "scenes/Coach/NameGamblerC104.vcd"  //Hey suit.
+	scene "scenes/Coach/NameGamblerC105.vcd"  //Hey suit.
+	scene "scenes/Coach/NameGamblerC106.vcd"  //Hey suit.
+	scene "scenes/Coach/NameGamblerC107.vcd"  //Sir.
+	scene "scenes/Coach/NameGamblerC108.vcd"  //Sir.
+}
+Rule SurvivorSpottedGamblerCloseC1Coach
+{
+	criteria ConceptPlayerLookHere IsNotCoughing IsCoach IsTalk IsTalkCoach IsNotSmartLookAuto  SubjectIsGambler IsGamblerNear400 IsWorldTalkCoach  NoKnowNames
+	Response SurvivorSpottedGamblerCloseC1Coach
+}
+
+Response SurvivorSpottedMechanicClose2C1Coach
+{
+	scene "scenes/Coach/NameEllis10.vcd"  //Youngin.
+}
+Rule SurvivorSpottedMechanicClose2C1Coach
+{
+	criteria ConceptPlayerLook IsNotCoughing IsCoach IsTalk IsTalkCoach IsNotSmartLookAuto  SubjectIsMechanic IsMechanicNear400 IsWorldTalkCoach  NoKnowNames
+	Response SurvivorSpottedMechanicClose2C1Coach
+}
+
+Response SurvivorSpottedMechanicCloseC1Coach
+{
+	scene "scenes/Coach/NameEllis10.vcd"  //Youngin.
+}
+Rule SurvivorSpottedMechanicCloseC1Coach
+{
+	criteria ConceptPlayerLookHere IsNotCoughing IsCoach IsTalk IsTalkCoach IsNotSmartLookAuto  SubjectIsMechanic IsMechanicNear400 IsWorldTalkCoach  NoKnowNames
+	Response SurvivorSpottedMechanicCloseC1Coach
+}
+
+Response SurvivorSpottedMechanicFarC1Coach
+{
+	scene "scenes/Coach/NameEllis07.vcd"  //Boyyy!
+	scene "scenes/Coach/NameEllis11.vcd"  //Boy.
+	scene "scenes/Coach/NameEllis12.vcd"  //Youngin.
+}
+Rule SurvivorSpottedMechanicFarC1Coach
+{
+	criteria ConceptPlayerLook IsNotCoughing IsCoach IsTalk IsTalkCoach IsNotSmartLookAuto SubjectIsMechanic IsMechanicFar400 IsWorldTalkCoach  NoKnowNames
+	Response SurvivorSpottedMechanicFarC1Coach
+}
+
+Response SurvivorSpottedProducerClose2C1Coach
+{
+	scene "scenes/Coach/NameProducerC101.vcd"  //Girl.
+	scene "scenes/Coach/NameProducerC103.vcd"  //Sweety.
+	scene "scenes/Coach/NameProducerC104.vcd"  //Excuse me, sweety.
+	scene "scenes/Coach/NameProducerC107.vcd"  //Uh, girl.
+	scene "scenes/Coach/NameProducerC108.vcd"  //Sweetheart
+	scene "scenes/Coach/NameProducerC109.vcd"  //Excuse me, sweety.
+	scene "scenes/Coach/NameProducerC110.vcd"  //Miss.
+	scene "scenes/Coach/NameProducerC111.vcd"  //Sweety.
+}
+Rule SurvivorSpottedProducerClose2C1Coach
+{
+	criteria ConceptPlayerLook IsNotCoughing IsCoach IsTalk IsTalkCoach IsNotSmartLookAuto  SubjectIsProducer IsProducerNear400 IsWorldTalkCoach  NoKnowNames
+	Response SurvivorSpottedProducerClose2C1Coach
+}
+
+Response SurvivorSpottedProducerCloseC1Coach
+{
+	scene "scenes/Coach/NameProducerC101.vcd"  //Girl.
+	scene "scenes/Coach/NameProducerC103.vcd"  //Sweety.
+	scene "scenes/Coach/NameProducerC104.vcd"  //Excuse me, sweety.
+	scene "scenes/Coach/NameProducerC107.vcd"  //Uh, girl.
+	scene "scenes/Coach/NameProducerC108.vcd"  //Sweetheart
+	scene "scenes/Coach/NameProducerC109.vcd"  //Excuse me, sweety.
+	scene "scenes/Coach/NameProducerC110.vcd"  //Miss.
+	scene "scenes/Coach/NameProducerC111.vcd"  //Sweety.
+}
+Rule SurvivorSpottedProducerCloseC1Coach
+{
+	criteria ConceptPlayerLookHere IsNotCoughing IsCoach IsTalk IsTalkCoach IsNotSmartLookAuto  SubjectIsProducer IsProducerNear400 IsWorldTalkCoach  NoKnowNames
+	Response SurvivorSpottedProducerCloseC1Coach
+}
+
+Response SurvivorSpottedProducerFarC1Coach
+{
+	scene "scenes/Coach/NameProducerC102.vcd"  //Girl.
+	scene "scenes/Coach/NameProducerC105.vcd"  //Girl.
+	scene "scenes/Coach/NameProducerC106.vcd"  //Hey, girl.
+}
+Rule SurvivorSpottedProducerFarC1Coach
+{
+	criteria ConceptPlayerLook IsNotCoughing IsCoach IsTalk IsTalkCoach IsNotSmartLookAuto SubjectIsProducer  IsProducerFar400 IsWorldTalkCoach  NoKnowNames
+	Response SurvivorSpottedProducerFarC1Coach
+}
+
+Response PlayerAlertGiveItemC1Coach
+{
+	scene "scenes/Coach/AlertGiveItemC101.vcd"  //You can have this.
+	scene "scenes/Coach/AlertGiveItemC102.vcd"  //Excuse me, here ya go.
+	scene "scenes/Coach/AlertGiveItemC103.vcd"  //Hey, you can have this.
+}
+Rule PlayerAlertGiveItemC1Coach
+{
+	criteria ConceptPlayerAlertGiveItem IsNotCoughing IsCoach IsTalk IsTalkCoach  IsWorldTalkCoach NoKnowNames  NoKnowNames
+	Response PlayerAlertGiveItemC1Coach
+}
+
+Response PlayerFriendlyFireC1Coach
+{
+	scene "scenes/Coach/FriendlyFireC101.vcd"  //Y'all need to focus!
+	scene "scenes/Coach/FriendlyFireC102.vcd"  //Listen, y'all, We need to pull together as a team.
+	scene "scenes/Coach/FriendlyFireC103.vcd"  //Now come on now, Let's put some effort into this.
+	scene "scenes/Coach/FriendlyFireC104.vcd"  //I'm trying to tell you, shooting each other is not helping each other.
+	scene "scenes/Coach/FriendlyFireC105.vcd"  //Work as a team people, work as a team.
+	scene "scenes/Coach/FriendlyFireC106.vcd"  //Y'all shootin' me.
+	scene "scenes/Coach/FriendlyFireC107.vcd"  //Let's not be shootin' each other people.
+	scene "scenes/Coach/FriendlyFireC108.vcd"  //Come'on y'all - none of that.
+	scene "scenes/Coach/FriendlyFireC109.vcd"  //Come on now, seriously.
+	scene "scenes/Coach/FriendlyFireC110.vcd"  //STOP! I am getting pissed off!
+}
+Rule PlayerFriendlyFireC1Coach
+{
+	criteria ConceptPlayerFriendlyFire IsNotCoughing IsCoach IsNotCoachFriendlyFire IsDamageTypeBullet IsTalk IsTalkCoach  IsWorldTalkCoach  NoKnowNames  NoKnowNames
+	ApplyContext "CoachFriendlyFire:1:10"
+	applycontexttoworld
+	Response PlayerFriendlyFireC1Coach
+}
+
+Response PlayerFriendlyFireFromGamblerC1Coach
+{
+	scene "scenes/Coach/FriendlyFireC1Gambler01.vcd"  //Nicolas, I thought you knew how to use a gun.
+	scene "scenes/Coach/FriendlyFireC1Gambler02.vcd"  //Nick! You shot me!
+	scene "scenes/Coach/FriendlyFireC1Gambler03.vcd"  //Hey Nick, that was my ass you shot.
+	scene "scenes/Coach/FriendlyFireC1Gambler04.vcd"  //Quit shootin' me Nick.
+}
+Rule PlayerFriendlyFireFromGamblerC1Coach
+{
+	criteria ConceptPlayerFriendlyFire IsNotCoughing IsCoach IsNotCoachFriendlyFire IsDamageTypeBullet IsTalk IsTalkCoach SubjectIsGambler ChanceToFire50Percent IsWorldTalkCoach  NoKnowNames
+	ApplyContext "CoachFriendlyFire:1:10"
+	applycontexttoworld
+	Response PlayerFriendlyFireFromGamblerC1Coach
+}
+
+Response PlayerFriendlyFireFromMechanicC1Coach
+{
+	scene "scenes/Coach/FriendlyFireC1Mechanic01.vcd"  //Ellis, settle down boy.  Ya shot me.
+	scene "scenes/Coach/FriendlyFireC1Mechanic02.vcd"  //Ellis! I'll take that gun away from ya!
+	scene "scenes/Coach/FriendlyFireC1Mechanic03.vcd"  //Ellis you are shooting me!
+	scene "scenes/Coach/FriendlyFireC1Mechanic04.vcd"  //Ellis damnit, you shot me!
+}
+Rule PlayerFriendlyFireFromMechanicC1Coach
+{
+	criteria ConceptPlayerFriendlyFire IsNotCoughing IsCoach IsNotCoachFriendlyFire IsDamageTypeBullet IsTalk IsTalkCoach SubjectIsMechanic ChanceToFire50Percent IsWorldTalkCoach  NoKnowNames
+	ApplyContext "CoachFriendlyFire:1:10"
+	applycontexttoworld
+	Response PlayerFriendlyFireFromMechanicC1Coach
+}
+
+Response PlayerFriendlyFireFromProducerC1Coach
+{
+	scene "scenes/Coach/FriendlyFireC1Producer01.vcd"  //Ro! Quit shootin' me.
+	scene "scenes/Coach/FriendlyFireC1Producer02.vcd"  //Rochelle girl, you shot me.
+	scene "scenes/Coach/FriendlyFireC1Producer03.vcd"  //Ro! What's gotten into you girl?
+	scene "scenes/Coach/FriendlyFireC1Producer04.vcd"  //Ro! You know damn well better than that.
+}
+Rule PlayerFriendlyFireFromProducerC1Coach
+{
+	criteria ConceptPlayerFriendlyFire IsNotCoughing IsCoach IsNotCoachFriendlyFire IsDamageTypeBullet IsTalk IsTalkCoach SubjectIsProducer ChanceToFire50Percent IsWorldTalkCoach  NoKnowNames
+	ApplyContext "CoachFriendlyFire:1:10"
+	applycontexttoworld
+	Response PlayerFriendlyFireFromProducerC1Coach
+}
+
+Response PlayerFriendlyFireNoBulletC1Coach
+{
+	scene "scenes/Coach/FriendlyFire02.vcd"  //Excuse me? EXCUSE ME?!?!
+	scene "scenes/Coach/FriendlyFireC103.vcd"  //Now come on now, Let's put some effort into this.
+	scene "scenes/Coach/FriendlyFireC105.vcd"  //Work as a team people, work as a team.
+	scene "scenes/Coach/FriendlyFireC108.vcd"  //Come'on y'all - none of that.
+}
+Rule PlayerFriendlyFireNoBulletC1Coach
+{
+	criteria ConceptPlayerFriendlyFire IsNotCoughing IsCoach IsNotCoachFriendlyFire IsNotDamageTypeBullet IsTalk IsTalkCoach IsWorldTalkCoach  NoKnowNames
+	ApplyContext "CoachFriendlyFire:1:10"
+	Response PlayerFriendlyFireNoBulletC1Coach
+}
+
+Response PlayerAlertGiveItemStopC1Coach
+{
+	scene "scenes/Coach/AlertGiveItemStopC101.vcd"  //Yo! I got somethin' for ya.
+	scene "scenes/Coach/AlertGiveItemStopC102.vcd"  //Hey! Hey! Hold up.
+}
+Rule PlayerAlertGiveItemStopC1Coach
+{
+	criteria ConceptAlertGiveItemStop IsNotCoughing IsCoach IsTalk IsTalkCoach IsNotSaidAlertGiveItemStopCoach  IsWorldTalkCoach   NoKnowNames
+	ApplyContext "SaidAlertGiveItemStopCoach:1:10"
+	Response PlayerAlertGiveItemStopC1Coach
+}
+
+Response PlayerSuggestHealthCoachC1Coach
+{
+	scene "scenes/Coach/SuggestHealthC101.vcd"  //This would be the time to heal up.
+	scene "scenes/Coach/SuggestHealthC102.vcd"  //Now's a good time to heal if you can.
+	scene "scenes/Coach/SuggestHealthC103.vcd"  //If you got a health kit you should use it.
+}
+Rule PlayerSuggestHealthCoachC1Coach
+{
+	criteria ConceptPlayerSuggestHealthCoach IsCoach IssuerReallyClose IsNotSuggestedHealth IsNotBeingHealed IsTalk IsTalkCoach  NotInCombat IsWorldTalkCoach  NoKnowNames
+	ApplyContext "SuggestedHealth:1:120"
+	applycontexttoworld
+	Response PlayerSuggestHealthCoachC1Coach
+}
+
+Response PlayerSuggestHealthGamblerC1Coach
+{
+	scene "scenes/Coach/SuggestHealthC101.vcd"  //This would be the time to heal up.
+	scene "scenes/Coach/SuggestHealthC102.vcd"  //Now's a good time to heal if you can.
+	scene "scenes/Coach/SuggestHealthC103.vcd"  //If you got a health kit you should use it.
+}
+Rule PlayerSuggestHealthGamblerC1Coach
+{
+	criteria ConceptPlayerSuggestHealthGambler IsCoach IssuerReallyClose IsNotSuggestedHealth IsNotBeingHealed IsTalk IsTalkCoach  NotInCombat IsWorldTalkCoach  NoKnowNames
+	ApplyContext "SuggestedHealth:1:120"
+	applycontexttoworld
+	Response PlayerSuggestHealthGamblerC1Coach
+}
+
+Response PlayerSuggestHealthMechanicC1Coach
+{
+	scene "scenes/Coach/SuggestHealthC101.vcd"  //This would be the time to heal up.
+	scene "scenes/Coach/SuggestHealthC102.vcd"  //Now's a good time to heal if you can.
+	scene "scenes/Coach/SuggestHealthC103.vcd"  //If you got a health kit you should use it.
+}
+Rule PlayerSuggestHealthMechanicC1Coach
+{
+	criteria ConceptPlayerSuggestHealthMechanic IsCoach IssuerReallyClose IsNotSuggestedHealth IsNotBeingHealed IsTalk IsTalkCoach  NotInCombat IsWorldTalkCoach  NoKnowNames
+	ApplyContext "SuggestedHealth:1:120"
+	applycontexttoworld
+	Response PlayerSuggestHealthMechanicC1Coach
+}
+
+Response PlayerSuggestHealthProducerC1Coach
+{
+	scene "scenes/Coach/SuggestHealthC101.vcd"  //This would be the time to heal up.
+	scene "scenes/Coach/SuggestHealthC102.vcd"  //Now's a good time to heal if you can.
+	scene "scenes/Coach/SuggestHealthC103.vcd"  //If you got a health kit you should use it.
+}
+Rule PlayerSuggestHealthProducerC1Coach
+{
+	criteria ConceptPlayerSuggestHealthProducer IsCoach IssuerReallyClose IsNotSuggestedHealth IsNotBeingHealed IsTalk IsTalkCoach  NotInCombat IsWorldTalkCoach  NoKnowNames
+	ApplyContext "SuggestedHealth:1:120"
+	applycontexttoworld
+	Response PlayerSuggestHealthProducerC1Coach
+}
+
+Response PlayerHealOtherC1Coach
+{
+	scene "scenes/Coach/HealOtherC101.vcd"  //Quit squirming, or I might mess this up.
+	scene "scenes/Coach/HealOtherC102.vcd"  //Stand still now, 'cause I ain't used to doin' this.
+	scene "scenes/Coach/HealOtherC103.vcd"  //I hope this makes you feel better ain't sure what I'm doin'.
+}
+Rule PlayerHealOtherC1Coach
+{
+	criteria ConceptPlayerHealingOther IsNotCoughing  IsCoach IsTalk IsTalkCoach  IsWorldTalkCoach  NoKnowNames
+	Response PlayerHealOtherC1Coach
+}
